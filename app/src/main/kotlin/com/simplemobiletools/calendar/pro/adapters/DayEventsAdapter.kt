@@ -94,7 +94,7 @@ class DayEventsAdapter(activity: SimpleActivity, val events: ArrayList<Event>, r
             event_item_color_bar.background.applyColorFilter(event.color)
 
             var newTextColor = textColor
-            if (dimPastEvents && event.isPastEvent && !isPrintVersion) {
+            if (dimPastEvents && event.isPastEvent && !isPrintVersion || event.isTask() && event.isTaskCompleted()) {
                 newTextColor = newTextColor.adjustAlpha(MEDIUM_ALPHA)
             }
 

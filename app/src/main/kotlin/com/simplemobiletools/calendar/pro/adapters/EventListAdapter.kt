@@ -162,6 +162,8 @@ class EventListAdapter(
                 }
             } else if (listEvent.startTS <= now && listEvent.endTS >= now && !isPrintVersion) {
                 newTextColor = adjustedPrimaryColor
+            } else if (listEvent.isTask && listEvent.isTaskCompleted) {
+                newTextColor = newTextColor.adjustAlpha(MEDIUM_ALPHA)
             }
 
             event_item_time.setTextColor(newTextColor)
